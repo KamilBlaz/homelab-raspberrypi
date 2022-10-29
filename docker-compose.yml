@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  infra:
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+    working_dir: /code
+    user: "root"
+    entrypoint: ""
+    volumes:
+      - $HOME/.ansible:/root/.ansible
+      - $HOME/.cache/ansible-compat:/root/.cache/ansible-compat
+      - ./:/code
+    environment:
+      - ANSIBLE_HOST_KEY_CHECKING=0
+      - ENV
+

@@ -1,0 +1,8 @@
+
+- name: Configure the raspberry pi
+  hosts: RASPBERRY_PI_IP
+tasks:
+  - name: "Update Apt Cache"
+    apt:
+      update_cache: yes
+    tags: installation
