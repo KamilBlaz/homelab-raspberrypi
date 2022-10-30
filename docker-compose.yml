@@ -11,8 +11,9 @@ services:
     volumes:
       - $HOME/.ansible:/root/.ansible
       - $HOME/.cache/ansible-compat:/root/.cache/ansible-compat
+      - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa:ro
       - ./:/code
     environment:
-      - ANSIBLE_HOST_KEY_CHECKING=0
+      - ANSIBLE_HOST_KEY_CHECKING=False
       - ENV
 
